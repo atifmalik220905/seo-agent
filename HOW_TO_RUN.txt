@@ -1,0 +1,26 @@
+SEO Audit Agent - Installation and Execution Guide
+===============================================
+
+Requirements:
+- Python 3.10 or later
+- Groq API key
+
+Execution:
+	python -m streamlit run app.py
+	Will open app page in default browser on http://localhost:8501
+
+Usage Instructions:
+    1. Insert URL directly into input area or upload CSV file containing column 'url'
+    2. Click 'Start Audit' to start audit procedure
+    3. Results available in Results Overview and Detailed Analysis tabs
+    4. Export results as JSON or CSV from Export tab
+
+Structure:
+    app.py       - Web interface using Streamlit library
+    index.py     - Core audit functionality and batch operations implementation
+    browser.py   - Page requests and parsing via requests + BeautifulSoup
+    extractor.py - SEO information extraction by Groq LLM
+    linkchecker.py - Checking for broken links
+    hitl.py      - HUMAN-INTHE-LOOP implementation
+    reporter.py  - Results reporting and storage
+    state.py     - Audit process states storing
